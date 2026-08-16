@@ -2,17 +2,46 @@
 
 ## Most homes are not disaster-ready. HazardShield AI shows exactly why — and what to fix first.
 
-**HazardShield AI** is an address-based property resilience platform that analyzes natural hazard exposure, explains risk scores, ranks upgrade recommendations by ROI, and generates a personalized PDF resilience report.
+**HazardShield AI** is an address-based property resilience platform that turns any U.S. property address into a natural hazard risk score, hazard breakdown, upgrade plan, ROI ranking, and personalized PDF resilience report.
 
-Enter any U.S. address and get a disaster risk score, hazard breakdown, upgrade plan, family readiness checklist, confidence level, and downloadable resilience report in seconds.
+Enter an address. Get a clear disaster-risk profile in seconds.
+
+---
+
+## Live Demo
+
+Try HazardShield AI here:
+
+**https://hazardshield-ai.streamlit.app**
+
+---
+
+## What This Project Does
+
+HazardShield AI helps users understand how exposed a property may be to natural hazards and what upgrades could improve its resilience.
+
+The app analyzes a property address and generates:
+
+* Natural hazard exposure profile
+* Property resilience score
+* Explanation of why the score was assigned
+* Model confidence level
+* Recommended upgrades
+* Upgrade ROI ranking
+* Budget-based improvement plan
+* Family readiness checklist
+* Professional questions for contractors, inspectors, and insurance providers
+* Downloadable PDF resilience report
 
 ---
 
 ## Why I Built This
 
-Natural disasters are becoming more expensive, more frequent, and more personal. Most homeowners, renters, and buyers do not have an easy way to understand the risks around a property before they make important decisions.
+Natural disasters are becoming more expensive, more frequent, and more personal. Yet most homeowners, renters, and homebuyers do not have a simple way to understand property-level disaster risk before making important decisions.
 
-HazardShield AI was built to make property risk easier to understand.
+A home may look safe from the outside, but still carry hidden exposure to flooding, hurricane wind, wildfire, storm surge, hail, extreme heat, or other hazards.
+
+HazardShield AI was built to make this information easier to understand.
 
 The goal is simple:
 
@@ -20,34 +49,19 @@ The goal is simple:
 
 ---
 
-## What HazardShield AI Does
-
-HazardShield AI helps users answer questions like:
-
-* What natural hazards are most relevant to this property?
-* How resilient is this home right now?
-* Why did the property receive this score?
-* Which upgrades should be prioritized first?
-* Which upgrades give the best resilience return on investment?
-* How prepared is the family for an emergency?
-* What should I ask a contractor, inspector, or insurance professional?
-* Can I download a professional-looking PDF report?
-
----
-
 ## Key Features
 
-### Address-Based Risk Analysis
+### Address-Based Property Analysis
 
-Users enter a property address, and the app uses Google Maps APIs to identify the location and evaluate regional hazard exposure.
+Users enter a U.S. property address, and the app uses Google Maps APIs to identify the location, city, state, ZIP code, latitude, and longitude.
 
 ### Google Street View Snapshot
 
-When available, the app displays a Street View image of the property area to make the report more visual and property-specific.
+When available, the app displays a Google Street View image of the property area to make the analysis more visual and location-specific.
 
 ### Natural Hazard Scoring
 
-The app estimates exposure to hazards such as:
+HazardShield AI estimates exposure to hazards such as:
 
 * Hurricane wind
 * Flooding
@@ -60,33 +74,42 @@ The app estimates exposure to hazards such as:
 * Winter weather
 * Urban flooding
 
-### Resilience Score
+### Property Resilience Score
 
-HazardShield AI generates a property resilience score from 0 to 100 based on local hazard intensity and prototype-level property assumptions.
+The app calculates a resilience score from 0 to 100 based on regional hazard intensity and prototype-level property assumptions.
 
 ### Why This Score?
 
-The app explains what reduced the score, including top local hazards, missing property details, and data uncertainty.
+Instead of showing only a number, HazardShield AI explains the score by breaking down the factors that reduce resilience, including:
+
+* Strongest local hazards
+* Unknown building condition
+* Data uncertainty
+* Missing property-level details
 
 ### Model Confidence
 
-The app shows how confident the model is based on detected address details, coordinates, ZIP code, and Street View availability.
+The app shows how confident the model is based on detected address data, ZIP code, coordinates, and Street View availability.
 
 ### Upgrade ROI Ranking
 
-Recommended upgrades are ranked by estimated score improvement compared with estimated minimum cost.
+Recommended improvements are ranked by estimated score gain compared with estimated minimum cost.
 
-### Budget-Based Upgrade Plan
+This helps answer:
 
-Users can choose a budget mode, and the app recommends the best combination of upgrades within that budget.
+> Which upgrade gives the most resilience improvement for the lowest cost?
+
+### Budget-Based Upgrade Optimizer
+
+Users can select a budget mode, and the app recommends the best upgrade combination within that budget.
 
 ### Family Readiness Checklist
 
-Users can check emergency preparedness items and receive a family readiness score.
+The app includes a preparedness checklist and calculates a family readiness score based on emergency planning items.
 
 ### Upgrade Roadmap
 
-The app creates a step-by-step action plan:
+HazardShield AI creates a phased action plan:
 
 * First 7 days
 * Next 30 days
@@ -94,7 +117,7 @@ The app creates a step-by-step action plan:
 
 ### Professional Questions
 
-HazardShield AI generates questions to ask:
+The app generates practical questions to ask:
 
 * Contractors
 * Insurance professionals
@@ -102,7 +125,21 @@ HazardShield AI generates questions to ask:
 
 ### PDF Resilience Report
 
-Users can download a personalized PDF report containing the property overview, hazard breakdown, scores, recommendations, confidence level, roadmap, and limitations.
+Users can download a personalized PDF report that includes the property overview, hazard breakdown, resilience scores, upgrade plan, model confidence, professional questions, and limitations.
+
+---
+
+## Example Use Cases
+
+HazardShield AI could help:
+
+* Homebuyers compare properties before purchasing
+* Homeowners decide which upgrades to prioritize
+* Renters understand disaster exposure before signing a lease
+* Families improve emergency preparedness
+* Insurance professionals explain risk more clearly
+* Home inspectors communicate resilience concerns
+* Students explore property risk modeling and climate resilience
 
 ---
 
@@ -112,6 +149,7 @@ Users can download a personalized PDF report containing the property overview, h
 * Streamlit
 * Pandas
 * Plotly
+* Requests
 * Google Geocoding API
 * Google Street View Static API
 * fpdf2
@@ -144,25 +182,12 @@ hazardshield-ai/
 1. The user enters a U.S. property address.
 2. Google Geocoding API resolves the address, city, state, ZIP code, latitude, and longitude.
 3. Google Street View Static API attempts to display a property snapshot.
-4. The app estimates natural hazard exposure based on state and city-level hazard profiles.
+4. The app estimates natural hazard exposure using regional hazard profiles.
 5. HazardShield AI calculates a resilience score.
 6. The app explains why the score was assigned.
-7. Recommended upgrades are ranked by score impact and estimated ROI.
+7. Recommended upgrades are ranked by estimated impact and ROI.
 8. The user can select a budget and generate an upgrade plan.
-9. The app creates a personalized PDF resilience report.
-
----
-
-## Example Use Cases
-
-HazardShield AI could help:
-
-* Homebuyers compare properties before making a decision
-* Homeowners understand what upgrades to prioritize
-* Renters evaluate disaster exposure before signing a lease
-* Families improve emergency preparedness
-* Insurance or inspection professionals explain risk more clearly
-* Students and researchers explore property resilience modeling
+9. The app creates a downloadable PDF resilience report.
 
 ---
 
@@ -196,9 +221,10 @@ Planned improvements include:
 * Address-to-address comparison
 * Computer vision property inspection prototype
 * More detailed upgrade cost calculator
-* Online deployment
-* More advanced scoring model
 * Improved UI and report design
+* More advanced scoring model
+* Saved report history
+* Expanded property-specific data sources
 
 ---
 
@@ -231,11 +257,11 @@ python3 -m streamlit run app/streamlit_app.py
 
 ---
 
-## Important Security Note
+## Security Note
 
-The Google Maps API key is stored locally in a `.env` file.
+The Google Maps API key is stored locally in a `.env` file and in Streamlit Cloud Secrets for deployment.
 
-The `.env` file is intentionally excluded from GitHub using `.gitignore`.
+The `.env` file is excluded from GitHub using `.gitignore`.
 
 Never upload API keys, secrets, or private credentials to a public repository.
 
@@ -243,12 +269,12 @@ Never upload API keys, secrets, or private credentials to a public repository.
 
 ## Project Status
 
-Current version:
+Current version includes:
 
-* Working Streamlit app
+* Working online Streamlit deployment
 * Address input
 * Google Maps geocoding
-* Street View snapshot
+* Google Street View snapshot
 * Hazard scoring
 * Resilience score
 * Upgrade recommendations
@@ -259,7 +285,7 @@ Current version:
 * ROI ranking
 * Upgrade roadmap
 * Professional questions
-* PDF report download
+* Downloadable PDF report
 
 ---
 
