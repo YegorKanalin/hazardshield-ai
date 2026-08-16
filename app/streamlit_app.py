@@ -1112,34 +1112,7 @@ for index, (section, items) in enumerate(questions.items()):
 
 st.divider()
 
-st.subheader("Data Sources & Limitations")
 
-source_col1, source_col2 = st.columns(2)
-
-with source_col1:
-    st.markdown("### Current Data Sources")
-    st.write("• Google Geocoding API")
-    st.write("• Google Street View Static API")
-    st.write("• Built-in regional hazard scoring model")
-    st.write("• User-selected family readiness checklist")
-    st.write("• User-selected retrofit simulator")
-
-with source_col2:
-    st.markdown("### Not Connected Yet")
-    st.write("• FEMA National Risk Index")
-    st.write("• FEMA flood zones")
-    st.write("• NOAA storm history")
-    st.write("• USGS elevation data")
-    st.write("• County property records")
-    st.write("• Roof age and permit history")
-    st.write("• Computer vision from property imagery")
-
-st.info(
-    "HazardShield AI is currently an educational prototype. It is designed to support resilience planning, "
-    "not to replace a licensed engineer, home inspector, insurance professional, or official hazard determination."
-)
-
-st.divider()
 # ============================================================
 # PDF Report
 # ============================================================
