@@ -16,6 +16,31 @@ Try HazardShield AI here:
 
 ---
 
+## Screenshots
+
+### Home Screen
+![Home Screen](assets/home.png)
+
+### Street View Property Snapshot
+![Street View Property Snapshot](assets/streetview.png)
+
+### Hazard Scores
+![Hazard Scores](assets/scores.png)
+
+### Score Breakdown
+![Score Breakdown](assets/scores%20breakdown.png)
+
+### Budget-Based Upgrade Optimizer
+![Budget-Based Upgrade Optimizer](assets/budget-bazed%20optimizer.png)
+
+### ROI Ranking
+![ROI Ranking](assets/ROI.png)
+
+### Professional Questions and PDF Download
+![Professional Questions and PDF Download](assets/questions%2Bpdf%20download.png)
+
+---
+
 ## What This Project Does
 
 HazardShield AI helps users understand how exposed a property may be to natural hazards and what upgrades could improve its resilience.
